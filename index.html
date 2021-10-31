@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./build/styles.css" />
+  <title>Frontend Mentor | E-commerce product page</title>
+
+</head>
+
+<body class="container mx-auto z-0">
+  <div id="card"></div>
+  <nav class="text-right z-0">
+    <div class="max-w-screen-[1440px] m-auto md:px-[90px] px-[30px]">
+      <div class="flex justify-between items-center md:border-b-[1px]">
+        <div class="flex items-center">
+          <div class="mr-4 cursor-pointer md:hidden" id="burger">
+            <img src="./images/icon-menu.svg" onclick="openNav()" />
+          </div>
+          <div class="mr-8 py-[20px]">
+            <img src="./images/logo.svg" alt="Sneakers Logo" />
+          </div>
+
+          <div class="md:block hidden">
+            <ul class="list-none md:flex md:flex-row font-medium lg:text-base md:text-sm">
+              <li class="mx-4 py-[20px] hover:border-b-2 hover:border-[color:var(--orange)]">
+                <a href="#" class="text-[color:var(--dark-grayish-blue)] hover:text-black">Collections</a>
+              </li>
+              <li class="mx-4 py-[20px] hover:border-b-2 hover:border-[color:var(--orange)]">
+                <a href="#" class="text-[color:var(--dark-grayish-blue)] hover:text-black">Men</a>
+              </li>
+              <li class="mx-4 py-[20px] hover:border-b-2 hover:border-[color:var(--orange)]">
+                <a href="#" class="text-[color:var(--dark-grayish-blue)] hover:text-black">Women</a>
+              </li>
+              <li class="mx-4 py-[20px] hover:border-b-2 hover:border-[color:var(--orange)]">
+                <a href="#" class="text-[color:var(--dark-grayish-blue)] hover:text-black">About</a>
+              </li>
+              <li class="mx-4 py-[20px] hover:border-b-2 hover:border-[color:var(--orange)]">
+                <a href="#" class="text-[color:var(--dark-grayish-blue)] hover:text-black">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <ul class="list-none flex flex-row items-center">
+            <li class="mx-2 py-[20px]"><a href="#" class="
+                text-sm
+                inline-block
+                mr-4
+              " id="badge"><img src="./images/icon-cart.svg" /></a></li>
+            <li class="py-[20px]" id="profile"><a href="#" class="
+                rounded-full
+                text-sm
+                inline-block
+                lg:h-11 lg:w-11
+                h-7 w-7 relative
+              ">
+                <img class="hover:rounded-full hover:border-2 hover:border-[color:var(--orange)]"
+                  src="./images/image-avatar.png" />
+              </a></li>
+          </ul>
+
+
+        </div>
+
+      </div>
+      <div class="hidden" id="menu">
+        <a href="javascript:void(0)" class="text-black"><img src="./images/icon-close.svg" onclick="closeNav()"
+            class="pl-4" /></a>
+        <ul class="list-none flex flex-col items-start font-bold mt-6">
+          <li class="my-2 pl-4">
+            <a href="#" class="text-black">Collections</a>
+          </li>
+          <li class="my-2 pl-4">
+            <a href="#" class="text-black">Men</a>
+          </li>
+          <li class="my-2 pl-4">
+            <a href="#" class="text-black">Women</a>
+          </li>
+          <li class="my-2 pl-4">
+            <a href="#" class="text-black">About</a>
+          </li>
+          <li class="my-2 pl-4">
+            <a href="#" class="text-black">Contact</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <main class="z-0">
+    <div class="
+        max-w-screen-[1440px]
+        md:mt-[50px]
+        mt-0
+        md:px-[130px]
+        px-[30px]
+      ">
+
+      <div class="
+          grid
+          md:grid-cols-2 md:grid-rows-1
+          grid-rows-2 grid-cols-1
+          md:gap-x-24
+          gap-y-24
+          items-center
+        ">
+        <div>
+          <img id="myImg" src="./images/image-product-1.jpg" class="rounded-2xl" alt="" />
+          <div id="myModal" class="modal">
+
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+
+            <!-- Modal Content (The Image) -->
+            <button
+              class="flex items-center justify-center w-9 h-9 p-3 bg-white rounded-full absolute md:top-[48.5%] top-[43.5%] md:left-[28.5%] z-10 left-[2.5%]"
+              onclick="plusSlides(-1)">
+              <img src="./images/icon-previous.svg" alt="" />
+            </button>
+
+            <img class="modal-content relative mx-auto mb-6 mySlides hidden">
+            <img class="modal-content relative mx-auto mb-6 mySlides hidden">
+            <img class="modal-content relative mx-auto mb-6 mySlides hidden">
+            <img class="modal-content relative mx-auto mb-6 mySlides hidden">
+
+            <button
+              class="flex items-center justify-center w-9 h-9 p-3 bg-white rounded-full absolute md:top-[48.5%] top-[43.5%] md:right-[28.5%] z-10 right-[2.5%]"
+              onclick="plusSlides(1)"><img src="./images/icon-next.svg" alt="" /></button>
+
+            <div class="grid grid-cols-4 gap-6 mt-7 thumbnails">
+              <img src="./images/image-product-1-thumbnail.jpg"
+                class="md:rounded-lg rounded-sm hover:border hover:border-[color:var(--orange)]" alt="" />
+              <img src="./images/image-product-2-thumbnail.jpg"
+                class="md:rounded-lg rounded-sm hover:border hover:border-[color:var(--orange)]" alt="" />
+              <img src="./images/image-product-3-thumbnail.jpg"
+                class="md:rounded-lg rounded-sm hover:border hover:border-[color:var(--orange)]" alt="" />
+              <img src="./images/image-product-4-thumbnail.jpg"
+                class="md:rounded-lg rounded-sm hover:border hover:border-[color:var(--orange)]" alt="" />
+            </div>
+          </div>
+          <div class="grid grid-cols-4 gap-6 mt-7">
+            <img src="./images/image-product-1-thumbnail.jpg"
+              class="rounded-lg hover:border hover:border-[color:var(--orange)]" alt="" />
+            <img src="./images/image-product-2-thumbnail.jpg"
+              class="rounded-lg hover:border hover:border-[color:var(--orange)]" alt="" />
+            <img src="./images/image-product-3-thumbnail.jpg"
+              class="rounded-lg hover:border hover:border-[color:var(--orange)]" alt="" />
+            <img src="./images/image-product-4-thumbnail.jpg"
+              class="rounded-lg hover:border hover:border-[color:var(--orange)]" alt="" />
+          </div>
+        </div>
+        <div class="text-left">
+          <h6 class="text-[color:var(--orange)] uppercase font-semibold  mb-3">Sneaker Company</h6>
+          <h1 class="md:text-5xl font-bold">
+            Fall Limited Edition Sneakers
+          </h1>
+          <p class="
+              text-[color:var(--dark-grayish-blue)]
+              mt-8
+              mb-5
+              text-[length:16.5px]
+            ">
+            These low-profile sneakers are your perfect casual wear companion. Featuring a
+            durable rubber outer sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="flex md:flex-col md:items-start flex-row items-center justify-between mb-5">
+            <div class="font-bold text-xl flex items-center" id="price">$125.00 <span
+                class="inline-block ml-3 bg-[color:var(--pale-orange)] text-xs rounded-sm text-[color:var(--orange)] py-1 px-2">50%</span>
+            </div>
+            <div class="text-sm mt-1.5 text-[color:var(--grayish-blue)] line-through">$250.00</div>
+          </div>
+          <div class="flex md:align-center md:justify-between md:flex-row flex-col">
+            <div
+              class="flex justify-between bg-[color:var(--light-grayish-blue)] rounded-md md:w-1/4 w-full md:mb-0 mb-3"
+              id="btns-container">
+              <button type="button" class="p-3" id="remove"><img src="./images/icon-minus.svg" /></button>
+              <span class="p-3 font-bold align-middle" id="quantity">0</span>
+              <button type="button" class="p-3 align-middle" id="add"><img src="./images/icon-plus.svg" /></button>
+            </div>
+            <div class="md:w-[70%] w-full" id="purchase-container">
+              <button
+                class="bg-[color:var(--orange)] text-white rounded-md align-middle py-3 w-full text-center text-sm hover:opacity-75"
+                type="button" id="purchase">
+                <svg width="22" height="20" class="inline-block mr-2 transform scale-90"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                    fill="#fff" fill-rule="nonzero" />
+                </svg> Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
